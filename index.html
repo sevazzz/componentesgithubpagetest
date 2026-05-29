@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Componentes BAT-SCANNER</title>
+</head>
+<body>
+
+    <style>
+        /*Fondo y estilo de letra*/
+        body {
+            background-color: rgb(0, 0, 0);
+            font-family: sans-serif;
+            margin: 0;
+            padding: 10px; 
+        }
+
+        /*Estilo de titulo*/
+        .titulo h1 {
+            color: rgb(255, 255, 255);
+            text-align: center;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            font-size: clamp(1.5rem, 4vw, 2.5rem); 
+        }
+
+        /*Estilo de rectangulo de fondo*/
+        .rectangulo {
+            width: 95%;            
+            max-width: 900px;      
+            background-color: #262627;
+            margin: 20px auto;
+            border-radius: 10px;
+            box-shadow: 2px 2px 10px rgb(95, 94, 94);
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .contenedor-tabla {
+            width: 100%;
+            overflow-x: auto; 
+            -webkit-overflow-scrolling: touch; 
+        }
+        
+        /*Estilo de botones de descargas*/
+        .descargas {
+            text-align: center;
+            margin: 40px auto;
+            width: 95%;            
+            max-width: 900px;      
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;       
+        }
+
+        /*Estilo de la tabla de componentes*/
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            color: white;
+            margin-top: 10px;
+            min-width: 600px; 
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: center;
+            border-bottom: 1px solid #3a3a3c;
+            vertical-align: middle;
+        }
+
+        th {
+            background-color: #1c1c1e;
+            color: #FFC107;
+            font-size: 13px;
+            text-transform: uppercase;
+        }
+
+        tr:hover {
+            background-color: #2f2f31;
+        }
+
+        .img-componente {
+            height: 50px;
+            width: auto;
+            display: block;
+            margin: 0 auto;
+            transition: transform 0.2s ease;
+            transform-origin: center center;
+        }
+
+        .img-componente:hover {
+            transform: scale(3.5);
+            z-index: 10;
+            position: relative; 
+            box-shadow: 0px 4px 15px rgba(0,0,0,0.7);
+            background-color: #262627; 
+            border-radius: 4px;
+        }
+
+        tr:last-child .img-componente {
+            transform-origin: bottom center;
+        }
+
+        /*Estilo del boton de compra*/
+        .btn-carrito-flaticon {
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        .btn-carrito-flaticon img {
+            height: 32px;
+            width: auto;
+            display: block;
+            margin: 0 auto;
+            transition: transform 0.2s ease;
+        }
+
+        .btn-carrito-flaticon img:hover {
+            transform: scale(1.15);
+        }
+        
+        /*Estilo de los botones de descargas*/
+        .descargas button {
+            padding: 12px 24px;
+            font-size: 14px;
+            font-weight: bold;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+            white-space: nowrap; 
+        }
+
+        .descargas .codigo {
+            background-color: #1c1c1e;
+            color: #FFC107;
+            border: 1px solid #3a3a3c;
+        }
+
+        .descargas .codigo:hover {
+            background-color: #e0e0e0;
+            color: #000000;
+            transform: translateY(-2px);
+        }
+
+        .descargas .listacomponentes {
+            background-color: #1c1c1e;
+            color: #FFC107;
+            border: 1px solid #3a3a3c;
+        }
+
+        .descargas .listacomponentes:hover {
+            background-color: #e0e0e0;
+            color: #000000;
+            transform: translateY(-2px);
+            box-shadow: 0px 6px 12px rgba(255, 255, 255, 0.1);
+        }
+    </style>
+
+<div class="titulo">
+    <h1> LISTA DE COMPONENTES DE BAT-SCANNER </h1>
+</div>
+
+<div class="rectangulo">
+    <div class="contenedor-tabla">
+        <table>
+            <tr>
+                <th>COMPONENTES</th>
+                <th>CÓDIGO</th>
+                <th>VALOR NOMINAL / Configuración</th>
+                <th>CANTIDAD</th>
+                <th>SIMBOLO</th>
+                <th>COMPRAR</th>
+            </tr>
+
+            <tr>
+                <td>Placa de desarrollo</td>
+                <td>Arduino UNO</td>
+                <td>-</td>
+                <td>1</td>
+                <td><img src="img_componentes/Arduino.png" alt="Icono Arduino" class="img-componente"></td>
+                <td>
+                    <a href="https://www.steren.com.sv/placa-de-desarrollo.html" target="_blank" class="btn-carrito-flaticon">
+                        <img src="img_componentes/carrito.png" alt="Comprar">
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <td>Servomotor</td>
+                <td>SG90</td>
+                <td>Rango: 0° a 180°</td>
+                <td>1</td>
+                <td><img src="img_componentes/SERVOMOTOR.png" alt="Icono Servomotor" class="img-componente"></td>
+                <td>
+                    <a href="https://www.steren.com.sv/micro-servomotor-con-torque-de-18-kgf-cm.html" target="_blank" class="btn-carrito-flaticon">
+                        <img src="img_componentes/carrito.png" alt="Comprar">
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <td>Sensor Ultrasónico</td>
+                <td>HC-SR04</td>
+                <td>-</td>
+                <td>1</td>
+                <td><img src="img_componentes/SENSOR ULTRASÓNICO.png" alt="Icono Sensor" class="img-componente"></td>
+                <td>
+                    <a href="https://www.steren.com.sv/sensor-ultrasonico.html" target="_blank" class="btn-carrito-flaticon">
+                        <img src="img_componentes/carrito.png" alt="Comprar">
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <td>Buzzer</td>
+                <td>Activo</td>
+                <td>Terminal Positiva (+)</td>
+                <td>1</td>
+                <td><img src="img_componentes/BUZZER.png" alt="Icono Buzzer" class="img-componente"></td>
+                <td>
+                    <a href="https://www.steren.com.sv/mini-buzzer-de-4-khz-a-de-1-5-a-16-vcc-con-se-al-de-tono-constante-de-85-db.html" target="_blank" class="btn-carrito-flaticon">
+                        <img src="img_componentes/carrito.png" alt="Comprar">
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <td>LED</td>
+                <td>RGB</td>
+                <td>Cátodo común</td>
+                <td>1</td>
+                <td><img src="img_componentes/LED.png" alt="Icono LED" class="img-componente"></td>
+                <td>
+                    <a href="https://www.steren.com.sv/led-de-5-mm-rgb.html" target="_blank" class="btn-carrito-flaticon">
+                        <img src="img_componentes/carrito.png" alt="Comprar">
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <td>Pantalla</td>
+                <td>OLED</td>
+                <td>0.96"</td>
+                <td>1</td>
+                <td><img src="img_componentes/PANTALLA OLED.png" alt="Icono Pantalla" class="img-componente"></td>
+                <td>
+                    <a href="https://www.steren.com.sv/anuncio-luminoso-lcd-2x16.html" target="_blank" class="btn-carrito-flaticon">
+                        <img src="img_componentes/carrito.png" alt="Comprar">
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <td>Placa de pruebas</td>
+                <td>Protoboard</td>
+                <td>N/A</td>
+                <td>1</td>
+                <td><img src="img_componentes/PROTOBOARD.png" alt="Icono Protoboard" class="img-componente"></td>
+                <td>
+                    <a href="https://www.steren.com.sv/mini-protoboard-de-ensamble-a-presion-1-bloque-y-2-tiras.html" target="_blank" class="btn-carrito-flaticon">
+                        <img src="img_componentes/carrito.png" alt="Comprar">
+                    </a>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<div class="descargas">
+    <a href="Descargas/código.rar" download>
+        <button class="codigo">Descargar código fuente</button>
+    </a>
+
+    <a href="Descargas/LISTA DE COMPONENTES.pdf" download>
+        <button class="listacomponentes">Descargar lista de componentes</button>
+    </a>
+</div>
+
+</body>
+</html>
